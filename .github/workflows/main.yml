@@ -33,7 +33,7 @@ jobs:
           git config --global user.name "GitHub Actions Bot"
           git add .
           git commit -m "Generated snake"
-          git push https://${{ secrets.GH_TOKEN }}@github.com/AlquserAbod/AlquserAbod.git HEAD:master
+          git push https://${{ secrets.PAT_TOKEN }}@github.com/AlquserAbod/AlquserAbod.git HEAD:master
 
       # Deploy to the output branch for GitHub Pages
       - name: Deploy to GitHub Pages (output branch)
@@ -42,4 +42,4 @@ jobs:
           target_branch: output
           build_dir: dist
         env:
-          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.PAT_TOKEN }}
